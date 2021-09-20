@@ -1,5 +1,5 @@
 import {  Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators,  } from '@angular/forms';
 import { WebapiService } from '../webapi.service';
 import { Router } from '@angular/router';
 @Component({
@@ -11,7 +11,12 @@ export class RegisterformComponent implements OnInit{
  
 
   method:any;
+  disabledDates:any;
   countryId!: number;
+  
+  bsValue = new Date();
+  maxDate = new Date();
+  minDate = new Date();
   
   constructor(private WebapiService:WebapiService,private router: Router){
   }
@@ -32,6 +37,8 @@ export class RegisterformComponent implements OnInit{
       phone_no: new FormControl('', [Validators.required]),
      country: new FormControl ('',[Validators.required]),
      state: new FormControl ('',[Validators.required]),
+     date_of_birth:new FormControl('')
+     
     });
  
      //for country
