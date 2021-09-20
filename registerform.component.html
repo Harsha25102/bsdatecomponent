@@ -4,9 +4,9 @@
       <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
         <input type="text" class="" id="customControlValidation1" placeholder="First Name" formControlName="firstname"
           required />
-          <div *ngIf="firstname.valid && (firstname.pristine|| firstname.touched)" class="alert alert-success"></div>
+        <div *ngIf="firstname.valid && (firstname.pristine|| firstname.touched)" class="alert alert-success"></div>
         <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert alert-danger">
-          <div *ngIf="firstname.errors?.required">firstname is required.</div>
+        <div *ngIf="firstname.errors?.required">firstname is required.</div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12 mb-3 ">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="row" id="second_row">
+    <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
         <input type="text" class="" id="customControlValidation4" placeholder="Phone" maxlength="10"
           formControlName="phone_no" required />
@@ -38,16 +38,16 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-3 " id="customControlValidation5">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3 " id="customControlValidation5 " id="second_row">
 
-        <select id="testType" formControlName="country">
+        <select id="testType" formControlName="country" >
           <option value="">Select country...</option>
           <option *ngFor="let country_name of countryArray" [ngValue]="country_name">{{country_name.name}}</option>
         </select>
        
       </div>
 
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-3" id="customControlValidation6">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3" id="customControlValidation6" id="second_row">
 
         <select id="testType" formControlName="state">
           <option value="">Select State... </option>
@@ -57,20 +57,36 @@
       </div>
     </div>
 
-    <div id="customControlValidation6">
-      <div id="third">
-        Gender:
+      <div class="row">
+        <div class="col gender">
+     
+     
+          Gender:
 
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-        <label class="form-check-label" for="inlineRadio1">Male</label>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+          <label class="form-check-label" for="inlineRadio1">Male</label>
 
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-        <label class="form-check-label" for="inlineRadio2">Female</label>
-
-        <div id="button">
-          <button type="button" class="btn btn-primary btn-lg" (click)="submit()">SUBMIT</button>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+          <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+        <div class="col thirdrow"></div>
+        <div id="thirdrow">
+           <input type="text"
+              placeholder="enter your date of birth"
+              class="form-control"
+              bsDatepicker
+              [bsValue]="bsValue"
+              [minDate]="minDate"
+              [maxDate]="maxDate"
+              [daysDisabled]="[6,0]"
+              [datesDisabled]="disabledDates"
+              [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD-MM-YYYY' }">
         </div>
       </div>
+      
     </div>
-  </div>
-</form>
+    <div class="submit">
+      <button type="button" class="btn btn-primary btn-lg" (click)="submit()">SUBMIT</button>
+    </div>
+ 
+
