@@ -6,9 +6,23 @@
 }
 #second_row{
   padding-top:2rem;
+  float: left;
 }
 #third{
   padding-top: 2rem;
+  padding-left:2rem;
+  padding-right:2rem;
+ 
+}
+#date{
+  width:42%;
+  float: left;
+}
+#thirdrow{
+    width:20%;
+    margin-right:50%;
+    float: left;
+    align-content: flex-start;
 }
 #button{
   padding-top: 2rem;
@@ -18,4 +32,26 @@
 }
 .alert alert-danger{
   padding-right: 2rem;
+}
+mat-form-field {
+  margin-right: 12px;
+}
+.dateofbirth{
+  display: inline-block;
+  padding-top: 1rem;
+  padding-left:1rem;
+  padding-right:2rem;
+  max-width: 150px;
+  height: 200px;
+}
+.gender{
+  
+  padding-top: 2rem;
+  padding-left:1rem;
+  padding-right:2rem;
+  float: left;
+  
+}
+.submit{
+  text-align: center;
 }
